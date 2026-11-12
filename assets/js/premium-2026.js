@@ -719,12 +719,52 @@
     var panel = $(".offcanvas__header");
     if (!panel) return;
     function close() { panel.classList.remove("open"); doc.body.classList.remove("mobile_menu_open"); }
+
     doc.addEventListener("keyup", function (e) { if (e.key === "Escape" && panel.classList.contains("open")) close(); });
+
     panel.addEventListener("click", function (e) {
+      if (e.target.closest(".offcanvas__close--btn")) { close(); return; }
+      var toggle = e.target.closest(".offcanvas__sub_menu_toggle");
+      if (toggle) {
+        window.setTimeout(function () {
+          toggle.setAttribute("aria-expanded", toggle.classList.contains("active") ? "true" : "false");
+        }, 10);
+        return;
+      }
       var link = e.target.closest("a[href]");
       var href = link && link.getAttribute("href");
       if (href && href.indexOf("javascript:") !== 0) close();
     });
+
+    /* Auto-expand Car Accessories submenu when on any accessory subpage */
+    var activeSub = panel.querySelector(".offcanvas__sub_menu_item.active");
+    if (activeSub) {
+      var li = activeSub.closest(".offcanvas__menu_li");
+      var sub = li && li.querySelector(".offcanvas__sub_menu");
+      var btn = li && li.querySelector(".offcanvas__sub_menu_toggle");
+      if (li && sub) {
+        li.classList.add("active");
+        sub.style.display = "block";
+        if (btn) {
+          btn.classList.add("active");
+          btn.setAttribute("aria-expanded", "true");
+        }
+      }
+    }
+
+    /* Swipe left to close on touchscreens */
+    var touchStartX = 0, touchStartY = 0;
+    panel.addEventListener("touchstart", function (e) {
+      if (!e.touches || !e.touches[0]) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    panel.addEventListener("touchend", function (e) {
+      if (!panel.classList.contains("open") || !e.changedTouches || !e.changedTouches[0]) return;
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      var dy = e.changedTouches[0].clientY - touchStartY;
+      if (dx < -64 && Math.abs(dy) < 50) close();
+    }, { passive: true });
   }
 
   function inertControls() {

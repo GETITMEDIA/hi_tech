@@ -2901,10 +2901,19 @@ button.primary__btn:hover {
 /* =========================================== 16 FOOTER =================== */
 .footer__section,
 .footer__section.hz-foot {
+  --p-text: #F8FAFC;
+  --p-text-2: rgba(255, 255, 255, .78);
+  --p-text-3: rgba(255, 255, 255, .62);
+  --p-line: rgba(255, 255, 255, .08);
+  --p-line-2: rgba(255, 255, 255, .14);
   background:
     radial-gradient(40% 50% at 15% 25%, rgba(220, 38, 38, 0.14), transparent 70%),
     linear-gradient(180deg, #0A0B0E 0%, #050608 100%) !important;
-  color: rgba(255, 255, 255, .72) !important;
+  color: rgba(255, 255, 255, .78) !important;
+}
+
+.hz-foot__brand p {
+  color: rgba(255, 255, 255, .78) !important;
 }
 
 .footer__section.hz-foot::before {
@@ -3027,8 +3036,26 @@ button.primary__btn:hover {
   border-top: 1px solid rgba(255, 255, 255, .07) !important;
 }
 
+.hz-foot__bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+}
+
+@media (min-width: 768px) and (max-width: 1460px) {
+  .hz-foot__bottom-inner {
+    padding-right: 56px;
+  }
+}
+
 .copyright__content {
-  color: rgba(255, 255, 255, .56) !important;
+  color: rgba(255, 255, 255, .72) !important;
+}
+
+.hz-foot__credit {
+  text-align: right;
 }
 
 .copyright__content .text__secondary {
@@ -3037,6 +3064,12 @@ button.primary__btn:hover {
 
 .copyright__content--link {
   color: var(--hz-red-bright) !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.copyright__content--link:hover {
+  color: #FFFFFF !important;
 }
 
 /* ========================================= 17 BREADCRUMBS ================ */

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exclusive Car Styling & Accessories | Hi-Tech Autozone Pondicherry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F5F6F8;
+      --brand: #F97316;
+      --brand-hover: #EA6C10;
+      --ink: #111315;
+      --muted: #64748B;
+      --card: #FFFFFF;
+      --border: #E5E7EB;
+      --radius: 20px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px 16px;
+    }
+    .wrap {
+      width: min(1040px, 94vw);
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 48px rgba(17, 19, 21, 0.08), 0 4px 16px rgba(17, 19, 21, 0.04);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .strip {
+      position: absolute;
+      inset: 0;
+      width: 44%;
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0%, rgba(249, 115, 22, 0.02) 100%);
+      margin-inline: auto;
+      left: 54%;
+      transform: translateX(-50%);
+      z-index: 0;
+      border-left: 1px solid rgba(249, 115, 22, 0.15);
+      border-right: 1px solid rgba(249, 115, 22, 0.15);
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 56px 48px 36px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(249, 115, 22, 0.12);
+      color: var(--brand);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .copy h1 {
+      font-weight: 900;
+      font-size: clamp(30px, 4.2vw, 48px);
+      line-height: 1.12;
+      color: var(--ink);
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
+    }
+    .copy h1 .accent {
+      color: var(--brand);
+    }
+    .copy .sub {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 44ch;
+    }
+    .cta {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--brand);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 13px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: all 0.25s ease;
+      border: 1px solid var(--brand);
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: var(--brand-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+    }
+    .btn.ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+    .btn.ghost:hover {
+      background: #F8F9FA;
+      border-color: #CBD5E1;
+      transform: translateY(-2px);
+    }
+    .stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+    .car {
+      width: 100%;
+      max-width: 460px;
+      height: auto;
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      border-top: 1px solid var(--border);
+      background: #FAFAFB;
+    }
+    .meta {
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .contact a {
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact a:hover {
+      color: var(--brand);
+    }
+    .bubble {
+      background: var(--ink);
+      color: #FFFFFF;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    @media (max-width: 860px) {
+      .content { grid-template-columns: 1fr; padding: 40px 24px; text-align: center; }
+      .copy .sub { margin-inline: auto; }
+      .cta { justify-content: center; }
+      .strip { display: none; }
+      .bar { padding: 18px 24px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap" aria-label="Hi-Tech Autozone Car Accessories Showcase">
+    <div class="strip" aria-hidden="true"></div>
+
+    <section class="content">
+      <div class="copy">
+        <span class="badge">16+ Years of Trust in Pondicherry</span>
+        <h1>
+          Elevate Your Drive With <span class="accent">Hi-Tech Autozone</span>
+        </h1>
+        <p class="sub">Custom seat covers, premium LED headlights, Android touchscreen infotainment, antirust coating, and complete car styling.</p>
+        <div class="cta">
+          <a class="btn" href="index.html">Explore Catalog</a>
+          <a class="btn ghost" href="contact.html">Store Location</a>
+        </div>
+      </div>
+
+      <div class="stage">
+        <svg class="car" viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrated modern SUV with orange finish">
+          <defs>
+            <linearGradient id="carPaint" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#FB923C"/>
+              <stop offset="50%" stop-color="#F97316"/>
+              <stop offset="100%" stop-color="#EA580C"/>
+            </linearGradient>
+            <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#1E293B"/>
+              <stop offset="100%" stop-color="#0F172A"/>
+            </linearGradient>
+          </defs>
+          <!-- Tires and Wheels -->
+          <circle cx="210" cy="325" r="62" fill="#111315"/>
+          <circle cx="210" cy="325" r="38" fill="#334155"/>
+          <circle cx="210" cy="325" r="14" fill="#F97316"/>
+          <circle cx="690" cy="325" r="62" fill="#111315"/>
+          <circle cx="690" cy="325" r="38" fill="#334155"/>
+          <circle cx="690" cy="325" r="14" fill="#F97316"/>
+          <!-- Car Body -->
+          <path d="M80 290 Q120 215 215 205 L520 180 Q630 170 690 210 L810 248 Q850 258 850 295 L850 320 L765 320 L720 310 L255 310 L205 320 L80 320 Z" fill="url(#carPaint)"/>
+          <!-- Windows -->
+          <path d="M245 205 L505 190 Q565 185 615 205 L675 236 L335 236 Z" fill="url(#glass)"/>
+          <!-- LED Headlights -->
+          <ellipse cx="825" cy="275" rx="18" ry="10" fill="#FEF08A"/>
+          <rect x="100" y="270" width="40" height="14" rx="4" fill="#E2E8F0"/>
+          <!-- Bumpers and Skirts -->
+          <rect x="760" y="300" width="75" height="12" rx="4" fill="#0F172A"/>
+          <rect x="135" y="302" width="70" height="12" rx="4" fill="#0F172A"/>
+        </svg>
+      </div>
+    </section>
+
+    <div class="bar">
+      <div class="meta">
+        📍 No. 2, Cuddalore Main Road, Mudaliarpet, Puducherry – 605004
+      </div>
+      <div class="contact">
+        <span class="bubble">Call for Consultation</span>
+        <a href="tel:9940917758">📞 99409 17758</a>
+        <a href="mailto:hitechautozone@gmail.com">✉️ hitechautozone@gmail.com</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" width="220" height="54" fill="none">
+  <!-- Speedometer Arc -->
+  <g transform="translate(4, 2)">
+    <!-- Dark segment of gauge (0 to 120 km/h) -->
+    <path d="M 12 46 A 26 26 0 0 1 36 10" stroke="#1E2229" stroke-width="5" stroke-dasharray="5 3" stroke-linecap="round"/>
+    <!-- Orange high-speed segment (120 to 220 km/h) -->
+    <path d="M 36 10 A 26 26 0 0 1 58 36" stroke="#F97316" stroke-width="5.5" stroke-dasharray="5 3" stroke-linecap="round"/>
+    <!-- Lower anchor -->
+    <path d="M 18 52 L 24 38 L 32 38 L 38 52 Z" fill="#1E2229"/>
+    <!-- Needle pointing to upper right -->
+    <path d="M 32 38 L 48 22" stroke="#F97316" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="32" cy="38" r="5.5" fill="#F97316"/>
+    <circle cx="32" cy="38" r="2.5" fill="#FFFFFF"/>
+    <!-- Speed streak -->
+    <path d="M 44 48 L 52 32 L 56 32 L 48 48 Z" fill="#F97316" opacity="0.9"/>
+  </g>
+  <!-- Text: HI TECH AUTOZONE -->
+  <g transform="translate(74, 10)">
+    <!-- HI TECH -->
+    <text x="0" y="24" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="24" font-style="italic" letter-spacing="-0.02em" fill="#111315">HI <tspan fill="#F97316">TECH</tspan></text>
+    <!-- AUTOZONE -->
+    <text x="0" y="44" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="14.5" letter-spacing="0.16em" fill="#1E2229">AUTOZONE</text>
+  </g>
+</svg>
